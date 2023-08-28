@@ -2,9 +2,13 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3030;
 
-// your code
-app.get('/',(req,res)=>{
+
+app.get('/',(_req,res)=>{
   res.send("Hi All");
+});
+app.get('/data',(req,res)=>{
+  var data = ['Ali','Geogrio','Rym','Sara']
+  res.send(data);
 });
 
 app.listen(PORT, () => {
