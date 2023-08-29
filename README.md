@@ -1,11 +1,11 @@
 # ApiTest
 # POST Request Example using Fetch API
 
-This is a simple example demonstrating how to make a POST request to a server using the Fetch API in JavaScript,and also getting Data from the Api using get.
+This is a simple example demonstrating how to make a POST request to a server using the Fetch API in JavaScript,and also retrieving Data from the Api using GET.
 
 ## Prerequisites
 
-- You should have a server running that can handle POST requests at `http://localhost:3030/SaveUser`using command Line Interface (node index.js).
+- You should have a server running that can handle POST requests at  `http://localhost:3030(or any specified port number )/SaveUser` using command Line Interface (node index.js).
 - The server should expect JSON data in the request body and save it.
 
 ## Instructions
@@ -24,7 +24,7 @@ This is a simple example demonstrating how to make a POST request to a server us
 - The response from the server is checked. If the response status is OK (200), a success message is logged. Otherwise, an error message is logged.
 
 ## Note
-
+- Api Data can be viewed using the GET method by having a server running that can handle POST requests at  `http://localhost:3030(or any specified port number )/Users` using command Line Interface (node index.js).
 - Replace the URL (`http://localhost:3030/SaveUser`) with the actual URL of your server.
 - Modify the `user` object to include the actual data you want to send in the request.
 
