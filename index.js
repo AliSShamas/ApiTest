@@ -1,16 +1,27 @@
 const express = require("express");
-var cors = require('cors');
 const app = express();
+var cors = require('cors');
 const PORT = process.env.PORT || 3030;
 
+app.use(express.json());
 app.use(cors());
 
-app.get('/',(_req,res)=>{
+const users = [];
+
+app.get('/', (_req, res) => {
   res.send("Hi All");
 });
-app.get('/data',(req,res)=>{
-  var data = ['Ali','Geogrio','Rym','Sarah','Steve','Alex','Josh','Chris','Nour','Samir','Britteny','Yaldez','Hazar']
-  res.send(data);
+
+
+app.post('/SaveUser', (req, res) => {
+  const user = req.body;
+  users.push(user);
+  res.send('User Saved');
+});
+
+app.get('/Users', (_req, res) => {
+  const allUsers = [{"name":'Ali'}, {"name":'Geogrio'}, {"name":'Rym'},{"name": 'Sarah'},{"name":"Samir"}, ...users];
+  res.send(allUsers);
 });
 
 app.listen(PORT, () => {
